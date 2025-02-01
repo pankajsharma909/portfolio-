@@ -1,0 +1,420 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+/* Background Image */
+#home {
+    background: url('img3.avif') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+/* Navbar */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 1s ease-out; /* Navbar Fade-in Animation */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    animation: slideIn 1.5s ease-out; /* Logo Slide-in Animation */
+}
+
+.logo span {
+    color: yellow;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    min-height: 100vh;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Fade-in animation for sections */
+}
+
+/* About Section Background */
+#about {
+    background-image: url('img3.avif'); /* Replace with your About section image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    animation-delay: 0.5s; /* Delay to make sections appear in order */
+}
+
+/* Skills Section Background */
+#skills {
+    background-image: url('img3.avif'); /* Replace with your Skills section image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    animation-delay: 1s;
+}
+
+/* Projects Section Background */
+#projects {
+    background-image: url('img3.avif'); /* Replace with your Projects section image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    animation-delay: 1.5s;
+}
+
+/* Header Text */
+h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-out; /* Header slide-in */
+}
+
+p {
+    font-size: 18px;
+    animation: slideIn 1.5s ease-out;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+    animation: bounce 1s infinite alternate; /* Bounce animation for the button */
+}
+
+.btn:hover {
+    background: orange;
+}
+
+/* Skills */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Fade-in for list items */
+}
+
+ul li:nth-child(odd) {
+    animation-delay: 2s;
+}
+
+ul li:nth-child(even) {
+    animation-delay: 2.5s;
+}
+
+/* Project Section */
+.project {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 80%;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.project:nth-child(odd) {
+    animation-delay: 2s;
+}
+
+.project:nth-child(even) {
+    animation-delay: 2.5s;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+    animation: fadeIn 1s ease-out; /* Footer Fade-in Animation */
+}
+
+/* Animations */
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bounce Animation for Button */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Show animations on scroll */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url('img3.avif') no-repeat center center/cover; /* Blue, Black, White Gradient */
+    color: white;
+    text-align: center;
+}
+
+/* Social Media Section */
+#social-media {
+    padding: 80px 20px;
+    background-color: rgba(39, 62, 116, 0.6);
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+#social-media h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    min-height: 100vh;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Fade-in animation for sections */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-icons {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to right, #0000ff, #000000, #ffffff); /* Blue, Black, White Gradient */
+    color: white;
+    text-align: center;
+}
+
+/* Qualifications Section */
+#qualifications {
+    padding: 80px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+#qualifications h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.qualification {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.qualification h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.qualification p {
+    font-size: 18px;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    min-height: 100vh;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Fade-in animation for sections */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .qualification {
+        padding: 15px;
+        margin: 15px;
+    }
+}
